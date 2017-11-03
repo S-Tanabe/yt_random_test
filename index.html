@@ -1,0 +1,19 @@
+<html ng-app='App'>
+  <head>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+  	<script type="text/javascript" src="./controller.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <!-- <body ng-controller="AppController"> -->
+  <body style="margin: 24px;" ng-controller="AppController">
+  	<!-- <youtube width="640" height="640" youtube-id="v=4cNv1CSYl8Q"></youtube> -->
+    <input type="button" value="Find" ng-click="doSearch()" class="btn btn-primary">
+    <input type = "text" ng-model="searchText"> 
+    <div ng-repeat="result in results">
+    	<youtube width="640" height="640" playlist="{{result.playlist}}" youtube-id={{result.id.videoId}}></youtube>
+    </div>
+<!--     <input type = "text" ng-model="displayText"> 
+    <input type="button" value="Find" ng-click="display()" class="btn btn-primary">
+    <h1>{{text}}</h1> -->
+  </body>
+</html>
